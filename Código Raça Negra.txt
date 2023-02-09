@@ -1,0 +1,66 @@
+'''
+Estrutura lógica:
+1 - Clicar no primeiro arquivo
+2 - Apertar F2 
+3 - Digitar "Seta para esquerda"
+4 - Digitar "DEL" 2x
+5 - Digitar a sequencia numérica necessária  
+6 - Digitar Enter
+7 - Digitar "seta para baixo"
+repetir até o fim'''
+
+##Bibliotecas usadas e código instalação
+#pip install pyautogui -- Ferramentas para automatização
+#pip install mouseinfo -- Taguear Mouse
+
+#-----------------------------------------------------
+# UTILIZAÇÃO MOUSEINFO
+#1 Abrir CMD
+#2 Executar comandos:
+#2.1 python
+#2.2 from mouseinfo import mouseInfo
+#2.3 mouseInfo()
+#3 Levar mouse até onde quer trackear
+#4 Apertar F6
+#-----------------------------------------------------
+
+#-----------------------------------------------------
+# ENCERRAR AUTOMAÇÃO
+# Jogar mouse para canto superior esquerdo
+#-----------------------------------------------------
+
+
+import pyautogui
+
+
+decimal = ['0','1','2','3','4','5','6','7','8','9','10']
+numerador = ['0','1','2','3','4','5','6','7','8','9','10']
+centena = ['0','1','2','3','4','5','6','7','8','9','10']
+
+indice_numerador = 0
+indice_decimal = 0
+indice_centenaril = 0
+
+# 1 - Clicar no primeiro arquivo
+pyautogui.click(1012,115,duration=1)
+#for primeiro_round in segundo_round:
+for j in range(0,10):
+  for w in range(0,10):
+    for i in range(0,10):
+      #2 - Apertar F2
+      pyautogui.hotkey("F2") 
+
+      # 3 - Digitar "Seta para esquerda"
+      pyautogui.hotkey('left')
+
+      # 5 - Colocar numeração
+      pyautogui.write(centena[j])
+      pyautogui.write(decimal[w])
+      pyautogui.write(numerador[i])
+      pyautogui.write(' - ')
+
+      #6 - Enter
+      pyautogui.hotkey("enter")
+
+        #6 - Apertar para baixo
+      pyautogui.hotkey("down")
